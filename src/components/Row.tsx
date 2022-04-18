@@ -1,16 +1,21 @@
 import Cell from "./Cell";
-import { useState, useEffect } from "react";
+import {
+    Dispatch,
+    SetStateAction,
+    useEffect,
+    useState,
+} from "react";
 
 interface RowProps {
     rowNumber: number;
     index: number;
     word: string;
+    setRowNumber: Dispatch<SetStateAction<number>>;
+    cellNumber: number;
+    setCellNumber: Dispatch<SetStateAction<number>>;
 }
 
-const Row = ({ rowNumber, index, word }: RowProps) => {
-
-    // cell we are currently operating on
-    const [cellNumber, setCellNumber] = useState<number>(0);
+const Row = ({ setRowNumber, setCellNumber, cellNumber, rowNumber, index, word }: RowProps) => {
 
     return (
         <div style={{ margin: "auto", width: "300px", display: "table" }}>
@@ -21,6 +26,7 @@ const Row = ({ rowNumber, index, word }: RowProps) => {
                     setCellNumber={setCellNumber}
                     rowIndex={index}
                     rowNumber={rowNumber}
+                    setRowNumber={setRowNumber}
                     letter={(word.length > 0) ? word[0] : ""}
                 />
             </div>
@@ -31,6 +37,7 @@ const Row = ({ rowNumber, index, word }: RowProps) => {
                     setCellNumber={setCellNumber}
                     rowIndex={index}
                     rowNumber={rowNumber}
+                    setRowNumber={setRowNumber}
                     letter={(word.length > 1) ? word[1] : ""}
                 />
             </div>
@@ -41,6 +48,7 @@ const Row = ({ rowNumber, index, word }: RowProps) => {
                     setCellNumber={setCellNumber}
                     rowIndex={index}
                     rowNumber={rowNumber}
+                    setRowNumber={setRowNumber}
                     letter={(word.length > 2) ? word[2] : ""}
                 />
             </div>
@@ -51,6 +59,7 @@ const Row = ({ rowNumber, index, word }: RowProps) => {
                     setCellNumber={setCellNumber}
                     rowIndex={index}
                     rowNumber={rowNumber}
+                    setRowNumber={setRowNumber}
                     letter={(word.length > 3) ? word[3] : ""}
                 />
             </div>
@@ -61,6 +70,7 @@ const Row = ({ rowNumber, index, word }: RowProps) => {
                     setCellNumber={setCellNumber}
                     rowIndex={index}
                     rowNumber={rowNumber}
+                    setRowNumber={setRowNumber}
                     letter={(word.length > 4) ? word[4] : ""}
                 />
             </div>

@@ -16,9 +16,10 @@ interface CellProps {
     rowIndex: number;
     letter: string;
     rowNumber: number;
+    setRowNumber: Dispatch<SetStateAction<number>>;
 }
 
-const Cell = ({ index, cellNumber, rowIndex, letter, setCellNumber, rowNumber }: CellProps) => {
+const Cell = ({ index, cellNumber, rowIndex, letter, setCellNumber, setRowNumber, rowNumber }: CellProps) => {
 
     const [show, setShow] = useState<boolean>(false);
 

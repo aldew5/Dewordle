@@ -7,12 +7,13 @@ const Game = () => {
     const [rowNumber, setRowNumber] = useState<number>(0);
     // the current word
     const [word, setWord] = useState<string>("");
+    const [cellNumber, setCellNumber] = useState<number>(0);
 
     let alph = "abcdefghijklmnopqrstuvwxyz";
     // handle any key press
     function handleKeyDown(event: any) {
         for (let i = 0; i < alph.length; i++) {
-            if (event.key === alph[i]) {
+            if (event.key === alph[i] && word.length < 5) {
                 let cur: string = word;
                 setWord(cur + event.key.toUpperCase());
                 break;
@@ -25,6 +26,11 @@ const Game = () => {
                 cur += word[i];
             }
             setWord(cur);
+        } else if (event.key === "Enter" && word.length === 5){
+            let num: number = rowNumber;
+            setRowNumber(num + 1);
+            setCellNumber(0);
+            setWord("");
         }
     }
 
@@ -46,27 +52,42 @@ const Game = () => {
                     rowNumber={rowNumber}
                     index={0}
                     word={word}
+                    setRowNumber={setRowNumber}
+                    cellNumber={cellNumber}
+                    setCellNumber={setCellNumber}
                 />
             </div>
             <Row
                 rowNumber={rowNumber}
                 index={1}
                 word={word}
+                setRowNumber={setRowNumber}
+                cellNumber={cellNumber}
+                setCellNumber={setCellNumber}
             />
             <Row
                 rowNumber={rowNumber}
                 index={2}
                 word={word}
+                setRowNumber={setRowNumber}
+                cellNumber={cellNumber}
+                setCellNumber={setCellNumber}
             />
             <Row
                 rowNumber={rowNumber}
                 index={3}
                 word={word}
+                setRowNumber={setRowNumber}
+                cellNumber={cellNumber}
+                setCellNumber={setCellNumber}
             />
             <Row
                 rowNumber={rowNumber}
                 index={4}
                 word={word}
+                setRowNumber={setRowNumber}
+                cellNumber={cellNumber}
+                setCellNumber={setCellNumber}
             />
         </div>
     )
