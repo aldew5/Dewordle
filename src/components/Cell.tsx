@@ -1,5 +1,5 @@
 
-   
+
 import {
     Dispatch,
     SetStateAction,
@@ -16,26 +16,29 @@ interface CellProps {
     setCellNumber: Dispatch<SetStateAction<number>>;
     input: string;
     rowIndex: number;
+    letter: string;
 }
 
-const Cell = ({input, index, cellNumber, fill, rowIndex, setCellNumber}: CellProps) => {
+const Cell = ({ input, index, cellNumber, fill, rowIndex, letter, setCellNumber }: CellProps) => {
 
-    const [letter, setLetter] = useState<string>("");
     const [filled, setFilled] = useState<boolean>(false);
 
     useEffect(() => {
-        if (fill !== index){
+        //console.log("Index is ", index, fill, input);
+        if (index !== cellNumber) {
             return;
         }
         // position in row is the cell number we're on
-        if (index === cellNumber){
+        console.log("IMPORTANT", index, cellNumber);
+        if (index === cellNumber) {
+            console.log("IN", input);
             if (input === "back" && letter !== "") {
-                setLetter("");
+                console.log("back");
+                
                 let num: number = cellNumber;
-                setCellNumber(num -1);
+                setCellNumber(num - 1);
 
             } else {
-                setLetter(input);
                 let num: number = cellNumber;
                 setCellNumber(num + 1);
             }
@@ -43,9 +46,12 @@ const Cell = ({input, index, cellNumber, fill, rowIndex, setCellNumber}: CellPro
     }, [cellNumber, input, fill])
 
     return (
-        <div style={{width: "60px", height: "60px", backgroundColor:"green", margin:"5px", display:"flex", justifyContent:"center", alignItems:"center"}}>
-            <div style={{marginBottom: "1px"}}>
-                <Typography color="white" variant="body1">{letter.toUpperCase()}</Typography>
+        <div style={{ width: "60px", height: "60px", backgroundColor: "green", margin: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ marginBottom: "1px" }}>
+                {(letter !== "") ?
+                    <Typography color="white" variant="body1">{letter}</Typography>
+                    : <></>
+                }
             </div>
         </div>
     )
