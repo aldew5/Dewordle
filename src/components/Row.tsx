@@ -15,6 +15,7 @@ const Row = ({ rowNumber, index, input, fill, word }: RowProps) => {
     const [cellNumber, setCellNumber] = useState<number>(-1);
     const [active, setActive] = useState<boolean>(false);
     //const [cellNumber, setCellNumber] = useState<number>(0);
+    console.log("ROW", rowNumber);
 
     useEffect(() => {
         // index of the row is the row we are on
