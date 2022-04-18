@@ -11,24 +11,22 @@ import styles from "../styles/Cell.module.css";
 
 interface CellProps {
     cellNumber: number;
-    numFilled: number;
+    fill: number;
     index: number;
     setCellNumber: Dispatch<SetStateAction<number>>;
     input: string;
     rowIndex: number;
 }
 
-const Cell = ({input, index, cellNumber, numFilled, rowIndex, setCellNumber}: CellProps) => {
+const Cell = ({input, index, cellNumber, fill, rowIndex, setCellNumber}: CellProps) => {
 
     const [letter, setLetter] = useState<string>("");
     const [filled, setFilled] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log("HERE", numFilled, 5*rowIndex + index);
-        if (numFilled !== 5*rowIndex + index) {
+        if (fill !== index){
             return;
         }
-
         // position in row is the cell number we're on
         if (index === cellNumber){
             if (input === "back" && letter !== "") {
@@ -42,7 +40,7 @@ const Cell = ({input, index, cellNumber, numFilled, rowIndex, setCellNumber}: Ce
                 setCellNumber(num + 1);
             }
         }
-    }, [cellNumber, input])
+    }, [cellNumber, input, fill])
 
     return (
         <div style={{width: "60px", height: "60px", backgroundColor:"green", margin:"5px", display:"flex", justifyContent:"center", alignItems:"center"}}>

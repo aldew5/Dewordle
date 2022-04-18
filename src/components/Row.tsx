@@ -5,10 +5,10 @@ interface RowProps {
     rowNumber: number;
     index: number;
     input: string;
-    numFilled: number;
+    fill: number;
 }
 
-const Row = ({ rowNumber, index, input, numFilled }: RowProps) => {
+const Row = ({ rowNumber, index, input, fill }: RowProps) => {
 
     const [number, setNumber] = useState<number>(0);
     const [cellNumber, setCellNumber] = useState<number>(-1);
@@ -31,17 +31,17 @@ const Row = ({ rowNumber, index, input, numFilled }: RowProps) => {
                     cellNumber={cellNumber}
                     setCellNumber={setCellNumber}
                     input={input}
-                    numFilled={numFilled}
+                    fill={fill}
                     rowIndex={index}
                 />
             </div>
             <div style={{ width: "50px", display: "table-cell" }}>
                 <Cell
-                    index={0}
+                    index={1}
                     cellNumber={cellNumber}
                     setCellNumber={setCellNumber}
                     input={input}
-                    numFilled={numFilled}
+                    fill={fill}
                     rowIndex={index}
                 />
             </div>
@@ -51,7 +51,7 @@ const Row = ({ rowNumber, index, input, numFilled }: RowProps) => {
                     cellNumber={cellNumber}
                     setCellNumber={setCellNumber}
                     input={input}
-                    numFilled={numFilled}
+                    fill={fill}
                     rowIndex={index}
                 />
             </div>
@@ -61,7 +61,7 @@ const Row = ({ rowNumber, index, input, numFilled }: RowProps) => {
                     cellNumber={cellNumber}
                     setCellNumber={setCellNumber}
                     input={input}
-                    numFilled={numFilled}
+                    fill={fill}
                     rowIndex={index}
                 />
             </div>
@@ -71,7 +71,7 @@ const Row = ({ rowNumber, index, input, numFilled }: RowProps) => {
                     cellNumber={cellNumber}
                     setCellNumber={setCellNumber}
                     input={input}
-                    numFilled={numFilled}
+                    fill={fill}
                     rowIndex={index}
                 />
             </div>
