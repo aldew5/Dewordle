@@ -6,6 +6,7 @@ const Game = () => {
 
     const [rowNumber, setRowNumber] = useState<number>(0);
     const [cellNumber, setCellNumber] = useState<number>(0);
+    const [numFilled, setNumFilled] = useState<number>(0);
     const [input, setInput] = useState<string>("");
 
     let alph = "abcdefghijklmnopqrstuvwxyz";
@@ -15,12 +16,16 @@ const Game = () => {
             if (event.key === alph[i]) {
                 setInput(event.key);
                 console.log("HERE", event.key);
+                let filled: number = numFilled;
+                setNumFilled(filled + 1);
                 break;
             }
         }
         
         if (event.key === "Backspace"){
             setInput("back");
+            let filled: number = numFilled;
+            setNumFilled(filled -1);
         }
     }
 
@@ -42,27 +47,32 @@ const Game = () => {
                 rowNumber={rowNumber}
                 index={0}
                 input={input}
+                numFilled = {numFilled}
             />
             </div>
             <Row 
                 rowNumber={rowNumber}
                 index={1}
                 input={input}
+                numFilled = {numFilled}
             />
            <Row 
                 rowNumber={rowNumber}
                 index={2}
                 input={input}
+                numFilled = {numFilled}
             />
             <Row 
                 rowNumber={rowNumber}
                 index={3}
                 input={input}
+                numFilled = {numFilled}
             />
             <Row 
                 rowNumber={rowNumber}
                 index={4}
                 input={input}
+                numFilled = {numFilled}
             />
         </div>
     )
