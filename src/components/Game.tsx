@@ -1,4 +1,5 @@
 import Row from "./Row";
+import CompleteRow from "./CompleteRow";
 import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 
@@ -7,6 +8,7 @@ const Game = () => {
     const [rowNumber, setRowNumber] = useState<number>(0);
     // the current word
     const [word, setWord] = useState<string>("");
+    const [save, setSave] = useState<string>("");
     const [cellNumber, setCellNumber] = useState<number>(0);
 
     let alph = "abcdefghijklmnopqrstuvwxyz";
@@ -27,10 +29,11 @@ const Game = () => {
                 cur += word[i];
             }
             setWord(cur);
-        } else if (event.key === "Enter" && word.length === 5){
+        } else if (event.key === "Enter" && word.length === 5) {
             let num: number = rowNumber;
             setRowNumber(num + 1);
             setCellNumber(0);
+            setSave(word);
             setWord("");
         }
     }
@@ -49,14 +52,20 @@ const Game = () => {
             <Typography variant="h4">Alec's Wordle</Typography>
             <hr />
             <div style={{ marginTop: "5rem" }}>
-                <Row
-                    rowNumber={rowNumber}
-                    index={0}
-                    word={word}
-                    setRowNumber={setRowNumber}
-                    cellNumber={cellNumber}
-                    setCellNumber={setCellNumber}
-                />
+                {(rowNumber > 0) ?
+                    <CompleteRow
+                        entered={save}
+                        word={"SAMER"}
+                    /> :
+                    <Row
+                        rowNumber={rowNumber}
+                        index={0}
+                        word={word}
+                        setRowNumber={setRowNumber}
+                        cellNumber={cellNumber}
+                        setCellNumber={setCellNumber}
+                    />
+                }
             </div>
             <Row
                 rowNumber={rowNumber}

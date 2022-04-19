@@ -42,11 +42,11 @@ const Cell = ({ index, cellNumber, rowIndex, letter, setCellNumber, setRowNumber
     }, [cellNumber, rowNumber])
 
     return (
-        <div style={{ width: "60px", height: "60px", backgroundColor: "green", margin: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ width: "60px", height: "60px", borderStyle: "solid", margin: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <div style={{ marginBottom: "1px" }}>
                 {(show) ?
                     <div>
-                        <Typography color="white" variant="body1">{letter}</Typography>
+                        <Typography color="black" variant="body1">{letter}</Typography>
                     </div> : <></>
                 }
             </div>
