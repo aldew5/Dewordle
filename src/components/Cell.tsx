@@ -21,33 +21,33 @@ interface CellProps {
 
 const Cell = ({ index, cellNumber, rowIndex, letter, setCellNumber, setRowNumber, rowNumber }: CellProps) => {
 
-    const [show, setShow] = useState<boolean>(false);
+    const [show, setShow] = useState<boolean>(true);
+    const [save, setSave] = useState<string>("");
 
-    useEffect(() => {  
+
+    useEffect(() => {
+        
+        if (rowIndex === rowNumber && cellNumber === index) {
+            setSave(letter);
+        }
+
         // the cell we are operating on is before the cell we are in
         // or the row is before the one we are operating on
-        if (index > cellNumber || rowIndex > rowNumber) {
+        if (rowIndex > rowNumber) {
             // leave it blank
             setShow(false);
             return;
-        } else {
-            // this is the first time we show
-            // so now we are operating on the next cell
-            if (!show){
-                let cell: number = cellNumber;
-                setCellNumber(cell + 1);
-                setShow(true);
-            }
         }
 
-    }, [cellNumber])
+    }, [cellNumber, rowNumber])
 
     return (
         <div style={{ width: "60px", height: "60px", backgroundColor: "green", margin: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <div style={{ marginBottom: "1px" }}>
                 {(show) ?
-                    <Typography color="white" variant="body1">{letter}</Typography>
-                    : <></>
+                    <div>
+                        <Typography color="white" variant="body1">{letter}</Typography>
+                    </div> : <></>
                 }
             </div>
         </div>

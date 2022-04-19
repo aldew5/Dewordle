@@ -15,6 +15,7 @@ const Game = () => {
         for (let i = 0; i < alph.length; i++) {
             if (event.key === alph[i] && word.length < 5) {
                 let cur: string = word;
+                //console.log(event.key);
                 setWord(cur + event.key.toUpperCase());
                 break;
             }
