@@ -64,7 +64,7 @@ const Game = () => {
 
     return (
         <div>
-            <Typography variant="h4">Alec's Wordle</Typography>
+            <Typography variant="h4"><b>Alec's Wordle</b></Typography>
             <hr />
             <div style={{ marginTop: "5rem" }}>
                 {(rowNumber > 0) ?
