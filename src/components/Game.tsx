@@ -8,7 +8,6 @@ const Game = () => {
     const [rowNumber, setRowNumber] = useState<number>(0);
     // the current word
     const [word, setWord] = useState<string>("");
-    const [cellNumber, setCellNumber] = useState<number>(0);
 
     // save each row of guesses
     const [saveOne, setSaveOne] = useState<string>("");
@@ -38,19 +37,18 @@ const Game = () => {
         } else if (event.key === "Enter" && word.length === 5) {
             let num: number = rowNumber;
 
-            if (rowNumber === 0){
+            if (rowNumber === 0) {
                 setSaveOne(word);
-            } else if (rowNumber === 1){
+            } else if (rowNumber === 1) {
                 setSaveTwo(word);
-            } else if (rowNumber === 2){
+            } else if (rowNumber === 2) {
                 setSaveThree(word);
-            } else if (rowNumber === 3){
+            } else if (rowNumber === 3) {
                 setSaveFour(word);
-            } else if (rowNumber === 4){
+            } else if (rowNumber === 4) {
                 setSaveFive(word);
             }
             setRowNumber(num + 1);
-            setCellNumber(0);
             setWord("");
         }
     }
@@ -78,9 +76,6 @@ const Game = () => {
                         rowNumber={rowNumber}
                         index={0}
                         word={word}
-                        setRowNumber={setRowNumber}
-                        cellNumber={cellNumber}
-                        setCellNumber={setCellNumber}
                     />
                 }
             </div>
@@ -94,9 +89,6 @@ const Game = () => {
                         rowNumber={rowNumber}
                         index={1}
                         word={word}
-                        setRowNumber={setRowNumber}
-                        cellNumber={cellNumber}
-                        setCellNumber={setCellNumber}
                     />
                 }
             </div>
@@ -110,9 +102,6 @@ const Game = () => {
                         rowNumber={rowNumber}
                         index={2}
                         word={word}
-                        setRowNumber={setRowNumber}
-                        cellNumber={cellNumber}
-                        setCellNumber={setCellNumber}
                     />
                 }
             </div>
@@ -126,9 +115,6 @@ const Game = () => {
                         rowNumber={rowNumber}
                         index={3}
                         word={word}
-                        setRowNumber={setRowNumber}
-                        cellNumber={cellNumber}
-                        setCellNumber={setCellNumber}
                     />
                 }
             </div>
@@ -142,9 +128,6 @@ const Game = () => {
                         rowNumber={rowNumber}
                         index={4}
                         word={word}
-                        setRowNumber={setRowNumber}
-                        cellNumber={cellNumber}
-                        setCellNumber={setCellNumber}
                     />
                 }
             </div>
