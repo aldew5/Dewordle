@@ -20,10 +20,10 @@ const CompleteCell = ({ value, required, word }: CompelteCellProps) => {
     const [color, setColor] = useState<string>("grey");
 
     useEffect (() => {
-        console.log("called");
-        console.log("up", value, required);
+        //console.log("called");
+        //console.log("up", value, required);
         if (value === required){
-            console.log("IN");
+            //console.log("IN");
             setColor("green");
         } else {
             for (let i = 0; i < word.length; i++){

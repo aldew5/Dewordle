@@ -8,8 +8,14 @@ const Game = () => {
     const [rowNumber, setRowNumber] = useState<number>(0);
     // the current word
     const [word, setWord] = useState<string>("");
-    const [save, setSave] = useState<string>("");
     const [cellNumber, setCellNumber] = useState<number>(0);
+
+    // save each row of guesses
+    const [saveOne, setSaveOne] = useState<string>("");
+    const [saveTwo, setSaveTwo] = useState<string>("");
+    const [saveThree, setSaveThree] = useState<string>("");
+    const [saveFour, setSaveFour] = useState<string>("");
+    const [saveFive, setSaveFive] = useState<string>("");
 
     let alph = "abcdefghijklmnopqrstuvwxyz";
     // handle any key press
@@ -31,9 +37,20 @@ const Game = () => {
             setWord(cur);
         } else if (event.key === "Enter" && word.length === 5) {
             let num: number = rowNumber;
+
+            if (rowNumber === 0){
+                setSaveOne(word);
+            } else if (rowNumber === 1){
+                setSaveTwo(word);
+            } else if (rowNumber === 2){
+                setSaveThree(word);
+            } else if (rowNumber === 3){
+                setSaveFour(word);
+            } else if (rowNumber === 4){
+                setSaveFive(word);
+            }
             setRowNumber(num + 1);
             setCellNumber(0);
-            setSave(word);
             setWord("");
         }
     }
@@ -54,7 +71,7 @@ const Game = () => {
             <div style={{ marginTop: "5rem" }}>
                 {(rowNumber > 0) ?
                     <CompleteRow
-                        entered={save}
+                        entered={saveOne}
                         word={"SAMER"}
                     /> :
                     <Row
@@ -67,38 +84,70 @@ const Game = () => {
                     />
                 }
             </div>
-            <Row
-                rowNumber={rowNumber}
-                index={1}
-                word={word}
-                setRowNumber={setRowNumber}
-                cellNumber={cellNumber}
-                setCellNumber={setCellNumber}
-            />
-            <Row
-                rowNumber={rowNumber}
-                index={2}
-                word={word}
-                setRowNumber={setRowNumber}
-                cellNumber={cellNumber}
-                setCellNumber={setCellNumber}
-            />
-            <Row
-                rowNumber={rowNumber}
-                index={3}
-                word={word}
-                setRowNumber={setRowNumber}
-                cellNumber={cellNumber}
-                setCellNumber={setCellNumber}
-            />
-            <Row
-                rowNumber={rowNumber}
-                index={4}
-                word={word}
-                setRowNumber={setRowNumber}
-                cellNumber={cellNumber}
-                setCellNumber={setCellNumber}
-            />
+            <div>
+                {(rowNumber > 1) ?
+                    <CompleteRow
+                        entered={saveTwo}
+                        word={"SAMER"}
+                    /> :
+                    <Row
+                        rowNumber={rowNumber}
+                        index={1}
+                        word={word}
+                        setRowNumber={setRowNumber}
+                        cellNumber={cellNumber}
+                        setCellNumber={setCellNumber}
+                    />
+                }
+            </div>
+            <div>
+                {(rowNumber > 2) ?
+                    <CompleteRow
+                        entered={saveThree}
+                        word={"SAMER"}
+                    /> :
+                    <Row
+                        rowNumber={rowNumber}
+                        index={2}
+                        word={word}
+                        setRowNumber={setRowNumber}
+                        cellNumber={cellNumber}
+                        setCellNumber={setCellNumber}
+                    />
+                }
+            </div>
+            <div>
+                {(rowNumber > 3) ?
+                    <CompleteRow
+                        entered={saveFour}
+                        word={"SAMER"}
+                    /> :
+                    <Row
+                        rowNumber={rowNumber}
+                        index={3}
+                        word={word}
+                        setRowNumber={setRowNumber}
+                        cellNumber={cellNumber}
+                        setCellNumber={setCellNumber}
+                    />
+                }
+            </div>
+            <div>
+                {(rowNumber > 4) ?
+                    <CompleteRow
+                        entered={saveFive}
+                        word={"SAMER"}
+                    /> :
+                    <Row
+                        rowNumber={rowNumber}
+                        index={4}
+                        word={word}
+                        setRowNumber={setRowNumber}
+                        cellNumber={cellNumber}
+                        setCellNumber={setCellNumber}
+                    />
+                }
+            </div>
         </div>
     )
 }

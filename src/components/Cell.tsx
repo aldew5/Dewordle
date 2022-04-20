@@ -22,24 +22,22 @@ interface CellProps {
 const Cell = ({ index, cellNumber, rowIndex, letter, setCellNumber, setRowNumber, rowNumber }: CellProps) => {
 
     const [show, setShow] = useState<boolean>(true);
-    const [save, setSave] = useState<string>("");
 
-
+    console.log("LETTER", letter);
     useEffect(() => {
-        
-        if (rowIndex === rowNumber && cellNumber === index) {
-            setSave(letter);
-        }
 
         // the cell we are operating on is before the cell we are in
         // or the row is before the one we are operating on
-        if (rowIndex > rowNumber) {
+        console.log("HERE", rowIndex, rowNumber);
+        if (rowIndex !== rowNumber) {
             // leave it blank
             setShow(false);
-            return;
+            console.log("SETTING FALSE");
+        } else {
+            setShow(true);
         }
 
-    }, [cellNumber, rowNumber])
+    }, [rowNumber, rowIndex])
 
     return (
         <div style={{ width: "60px", height: "60px", borderStyle: "solid", margin: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
