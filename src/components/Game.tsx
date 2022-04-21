@@ -9,6 +9,7 @@ const Game = () => {
     const [rowNumber, setRowNumber] = useState<number>(0);
     // the current word
     const [guess, setGuess] = useState<string>("");
+    const [word, setWord] = useState<string>("");
     const [solved, setSolved] = useState<boolean>(false);
     const [showComplete, setShowComplete] = useState<boolean>(true);
 
@@ -62,6 +63,10 @@ const Game = () => {
         }
     }
 
+    useEffect(() => {
+        setWord(words[Math.floor(Math.random()*words.length)])
+    }, [])
+
     // add the event listener (for key presses)
     useEffect(() => {
         window.addEventListener('keyup', handleKeyDown);
@@ -79,7 +84,7 @@ const Game = () => {
                     {(rowNumber > 0) ?
                         <CompleteRow
                             entered={saveOne}
-                            word={"SAMER"}
+                            word={word}
                         /> :
                         <Row
                             rowNumber={rowNumber}
@@ -91,7 +96,7 @@ const Game = () => {
                         {(rowNumber > 1) ?
                             <CompleteRow
                                 entered={saveTwo}
-                                word={"SAMER"}
+                                word={word}
                             /> :
                             <Row
                                 rowNumber={rowNumber}
@@ -104,7 +109,7 @@ const Game = () => {
                         {(rowNumber > 2) ?
                             <CompleteRow
                                 entered={saveThree}
-                                word={"SAMER"}
+                                word={word}
                             /> :
                             <Row
                                 rowNumber={rowNumber}
@@ -117,7 +122,7 @@ const Game = () => {
                         {(rowNumber > 3) ?
                             <CompleteRow
                                 entered={saveFour}
-                                word={"SAMER"}
+                                word={word}
                             /> :
                             <Row
                                 rowNumber={rowNumber}
@@ -130,7 +135,7 @@ const Game = () => {
                         {(rowNumber > 4) ?
                             <CompleteRow
                                 entered={saveFive}
-                                word={"SAMER"}
+                                word={word}
                             /> :
                             <Row
                                 rowNumber={rowNumber}
@@ -142,7 +147,7 @@ const Game = () => {
                 </div>
                 {(solved && showComplete) ?
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "-15rem", marginLeft: "36rem", position: "absolute" }}>
-                        <Solved setShowComplete={setShowComplete}/>
+                        <Solved setShowComplete={setShowComplete} />
                     </div>
                     :
                     <div></div>

@@ -1,7 +1,6 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import ClearIcon from "@mui/icons-material/Clear";
-import { Box } from "@material-ui/core";
 import Typography from "@mui/material/Typography";
 import {
     Dispatch,
@@ -19,7 +18,7 @@ const Solved = ({ setShowComplete }: SolvedProps) => {
             <div style={{ alignContent: "center" }}>
                 <CardContent>
                     <div style={{ float: "right" }}>
-                        <ClearIcon onClick={() => {setShowComplete(false)}}/>
+                        <ClearIcon onClick={() => { setShowComplete(false) }} />
                     </div>
                     <Typography
                         sx={{ fontSize: 14 }}
@@ -34,7 +33,7 @@ const Solved = ({ setShowComplete }: SolvedProps) => {
                     >
                         Congratulations!
                     </Typography>
-                    <Typography sx={{marginTop: "1rem"}}>
+                    <Typography sx={{ marginTop: "1rem" }}>
                         You have successfully beaten today's Wordle!
                     </Typography>
 

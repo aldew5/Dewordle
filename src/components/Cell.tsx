@@ -18,7 +18,6 @@ const Cell = ({ rowIndex, letter, rowNumber }: CellProps) => {
     useEffect(() => {
         // the cell we are operating on is before the cell we are in
         // or the row is before the one we are operating on
-        console.log("HERE", rowIndex, rowNumber);
         if (rowIndex !== rowNumber) {
             // leave it blank
             setShow(false);
