@@ -31,7 +31,7 @@ const CompleteCell = ({ value, required, word }: CompelteCellProps) => {
     }, [color])
     
     return (
-        <div style={{ width: "60px", height: "60px", backgroundColor: `${color}`, borderStyle: "solid", margin: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div className={styles.main} style={{backgroundColor: `${color}`}}>
             <div style={{ marginBottom: "1px" }}>
                 <Typography color="white" variant="body1">{value}</Typography>
             </div>

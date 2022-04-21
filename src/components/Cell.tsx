@@ -1,8 +1,6 @@
-
-
 import {
     useEffect,
-    useState,
+    useState
 } from "react";
 import Typography from "@mui/material/Typography";
 import styles from "../styles/Cell.module.css";
@@ -31,7 +29,7 @@ const Cell = ({ rowIndex, letter, rowNumber }: CellProps) => {
     }, [rowNumber, rowIndex])
 
     return (
-        <div style={{ width: "60px", height: "60px", borderStyle: "solid", margin: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div className={styles.main}>
             <div style={{ marginBottom: "1px" }}>
                 {(show) ?
                     <div>
