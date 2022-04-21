@@ -28,7 +28,6 @@ const Game = () => {
         for (let i = 0; i < alph.length; i++) {
             if (event.key === alph[i] && guess.length < 5) {
                 let cur: string = guess;
-                //console.log(event.key);
                 setGuess(cur + event.key.toUpperCase());
                 break;
             }
@@ -43,7 +42,7 @@ const Game = () => {
         } else if (event.key === "Enter" && guess.length === 5) {
             let num: number = rowNumber;
 
-            if (guess === "SAMER") {
+            if (guess === word) {
                 setSolved(true);
             }
 
@@ -89,7 +88,7 @@ const Game = () => {
                         <Row
                             rowNumber={rowNumber}
                             index={0}
-                            word={guess}
+                            guess={guess}
                         />
                     }
                     <div>
@@ -101,7 +100,7 @@ const Game = () => {
                             <Row
                                 rowNumber={rowNumber}
                                 index={1}
-                                word={guess}
+                                guess={guess}
                             />
                         }
                     </div>
@@ -114,7 +113,7 @@ const Game = () => {
                             <Row
                                 rowNumber={rowNumber}
                                 index={2}
-                                word={guess}
+                                guess={guess}
                             />
                         }
                     </div>
@@ -127,7 +126,7 @@ const Game = () => {
                             <Row
                                 rowNumber={rowNumber}
                                 index={3}
-                                word={guess}
+                                guess={guess}
                             />
                         }
                     </div>
@@ -140,7 +139,7 @@ const Game = () => {
                             <Row
                                 rowNumber={rowNumber}
                                 index={4}
-                                word={guess}
+                                guess={guess}
                             />
                         }
                     </div>

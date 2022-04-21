@@ -3,10 +3,10 @@ import Cell from "./Cell";
 interface RowProps {
     rowNumber: number;
     index: number;
-    word: string;
+    guess: string;
 }
 
-const Row = ({ rowNumber, index, word }: RowProps) => {
+const Row = ({ rowNumber, index, guess }: RowProps) => {
 
     return (
         <div style={{ margin: "auto", width: "300px", display: "table" }}>
@@ -14,35 +14,35 @@ const Row = ({ rowNumber, index, word }: RowProps) => {
                 <Cell
                     rowIndex={index}
                     rowNumber={rowNumber}
-                    letter={(word.length > 0) ? word[0] : ""}
+                    letter={(guess.length > 0) ? guess[0] : ""}
                 />
             </div>
             <div style={{ width: "50px", display: "table-cell" }}>
                 <Cell
                     rowIndex={index}
                     rowNumber={rowNumber}
-                    letter={(word.length > 1) ? word[1] : ""}
+                    letter={(guess.length > 1) ? guess[1] : ""}
                 />
             </div>
             <div style={{ width: "50px", display: "table-cell" }}>
                 <Cell
                     rowIndex={index}
                     rowNumber={rowNumber}
-                    letter={(word.length > 2) ? word[2] : ""}
+                    letter={(guess.length > 2) ? guess[2] : ""}
                 />
             </div>
             <div style={{ width: "50px", display: "table-cell" }}>
                 <Cell
                     rowIndex={index}
                     rowNumber={rowNumber}
-                    letter={(word.length > 3) ? word[3] : ""}
+                    letter={(guess.length > 3) ? guess[3] : ""}
                 />
             </div>
             <div style={{ width: "50px", display: "table-cell" }}>
                 <Cell
                     rowIndex={index}
                     rowNumber={rowNumber}
-                    letter={(word.length > 4) ? word[4] : ""}
+                    letter={(guess.length > 4) ? guess[4] : ""}
                 />
             </div>
 
