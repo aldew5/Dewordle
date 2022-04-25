@@ -78,7 +78,7 @@ const Game = () => {
     });
 
     return (
-        <div>
+        <div style={{marginBottom:"40px"}}>
             <Typography variant="h4"><b>Alec's Wordle</b></Typography>
             <hr />
             <div style={{ marginTop: "5rem" }}>

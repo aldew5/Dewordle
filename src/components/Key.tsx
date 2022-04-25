@@ -10,7 +10,7 @@ const Key = ({value}: KeyProps) => {
         console.log("HERE");
     }, [])
     return (
-        <div className={styles.key}>
+        <div className={(value !== "Enter" && value !== "Delete") ? styles.key : styles.command}>
             {value}
         </div>
     )
