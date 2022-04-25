@@ -19,10 +19,11 @@ const Game = () => {
     const [saveThree, setSaveThree] = useState<string>("");
     const [saveFour, setSaveFour] = useState<string>("");
     const [saveFive, setSaveFive] = useState<string>("");
+    const [saveSix, setSaveSix] = useState<string>("");
 
     let words: string[] = ["SAMER"];
 
-    let alph = "abcdefghijklmnopqrstuvwxyz";
+    let alph: string = "abcdefghijklmnopqrstuvwxyz";
     // handle any key press
     function handleKeyDown(event: any) {
         for (let i = 0; i < alph.length; i++) {
@@ -56,6 +57,8 @@ const Game = () => {
                 setSaveFour(guess);
             } else if (rowNumber === 4) {
                 setSaveFive(guess);
+            } else if (rowNumber === 5) {
+                setSaveSix(guess);
             }
             setRowNumber(num + 1);
             setGuess("");
@@ -139,6 +142,19 @@ const Game = () => {
                             <Row
                                 rowNumber={rowNumber}
                                 index={4}
+                                guess={guess}
+                            />
+                        }
+                    </div>
+                    <div>
+                        {(rowNumber > 5) ?
+                            <CompleteRow
+                                entered={saveSix}
+                                word={word}
+                            /> :
+                            <Row
+                                rowNumber={rowNumber}
+                                index={5}
                                 guess={guess}
                             />
                         }
