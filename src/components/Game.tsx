@@ -162,7 +162,20 @@ const Game = () => {
                     </div>
                 </div>
                 <div style={{ marginTop: "4rem" }}>
-                    <Keyboard setGuess={setGuess} guess={guess} />
+                    <Keyboard 
+                        setGuess={setGuess} 
+                        guess={guess}
+                        setSaveOne={setSaveOne} 
+                        setSaveTwo={setSaveTwo} 
+                        setSaveThree={setSaveThree} 
+                        setSaveFour={setSaveFour} 
+                        setSaveFive={setSaveFive} 
+                        setSaveSix={setSaveSix} 
+                        setRowNumber={setRowNumber}
+                        setSolved={setSolved}
+                        rowNumber={rowNumber}
+                        word={word}
+                    />
                 </div>
                 {(solved && showComplete) ?
                     <div style={{

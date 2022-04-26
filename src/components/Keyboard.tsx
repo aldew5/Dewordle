@@ -12,10 +12,20 @@ interface Key {
 
 interface KeyboardProps {
     setGuess: Dispatch<SetStateAction<string>>;
+    setSaveOne: Dispatch<SetStateAction<string>>;
+    setSaveTwo: Dispatch<SetStateAction<string>>;
+    setSaveThree: Dispatch<SetStateAction<string>>;
+    setSaveFour: Dispatch<SetStateAction<string>>;
+    setSaveFive: Dispatch<SetStateAction<string>>;
+    setSaveSix: Dispatch<SetStateAction<string>>;
+    setRowNumber: Dispatch<SetStateAction<number>>;
+    setSolved: Dispatch<SetStateAction<boolean>>;
+    rowNumber: number;
     guess: string;
+    word: string;
 }
 
-const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
+const Keyboard = ({ word, rowNumber, setGuess, setSaveOne, setSaveTwo, setSaveThree, setSaveFour, setSaveFive, setSaveSix, setRowNumber, setSolved, guess }: KeyboardProps) => {
     const [firstKeys, setFirstKeys] = useState<Key[]>([]);
     const [secondKeys, setSecondKeys] = useState<Key[]>([]);
     const [thirdKeys, setThirdKeys] = useState<Key[]>([]);
@@ -49,7 +59,21 @@ const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {firstKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value} setGuess={setGuess} guess={guess} />
+                        <Key
+                            value={key.value}
+                            setGuess={setGuess}
+                            guess={guess}
+                            setSaveOne={setSaveOne}
+                            setSaveTwo={setSaveTwo}
+                            setSaveThree={setSaveThree}
+                            setSaveFour={setSaveFour}
+                            setSaveFive={setSaveFive}
+                            setSaveSix={setSaveSix}
+                            setRowNumber={setRowNumber}
+                            setSolved={setSolved}
+                            rowNumber={rowNumber}
+                            word={word}
+                        />
                     </div>
 
                 ))}
@@ -57,7 +81,21 @@ const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {secondKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value} setGuess={setGuess} guess={guess} />
+                        <Key
+                            value={key.value}
+                            setGuess={setGuess}
+                            guess={guess}
+                            setSaveOne={setSaveOne}
+                            setSaveTwo={setSaveTwo}
+                            setSaveThree={setSaveThree}
+                            setSaveFour={setSaveFour}
+                            setSaveFive={setSaveFive}
+                            setSaveSix={setSaveSix}
+                            setRowNumber={setRowNumber}
+                            setSolved={setSolved}
+                            rowNumber={rowNumber}
+                            word={word}
+                        />
                     </div>
 
                 ))}
@@ -65,7 +103,21 @@ const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {thirdKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value} setGuess={setGuess} guess={guess} />
+                        <Key
+                            value={key.value}
+                            setGuess={setGuess}
+                            guess={guess}
+                            setSaveOne={setSaveOne}
+                            setSaveTwo={setSaveTwo}
+                            setSaveThree={setSaveThree}
+                            setSaveFour={setSaveFour}
+                            setSaveFive={setSaveFive}
+                            setSaveSix={setSaveSix}
+                            setRowNumber={setRowNumber}
+                            setSolved={setSolved}
+                            rowNumber={rowNumber}
+                            word={word}
+                        />
                     </div>
 
                 ))}
