@@ -1,7 +1,4 @@
-import {
-    Dispatch,
-    SetStateAction,
-} from "react";
+import { Dispatch, SetStateAction } from "react";
 import styles from "../styles/Key.module.css";
 
 interface KeyProps {

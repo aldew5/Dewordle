@@ -1,7 +1,4 @@
-import {
-    useEffect,
-    useState
-} from "react";
+import { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 import styles from "../styles/Cell.module.css";
 
