@@ -20,7 +20,8 @@ interface KeyProps {
     setSolved: Dispatch<SetStateAction<boolean>>;
 }
 
-const Key = ({ word, value, guess, rowNumber, setGuess, setSaveOne, setSaveTwo, setSaveThree, setSaveFour, setSaveFive, setSaveSix, setSolved, setRowNumber }: KeyProps) => {
+const Key = ({ word, value, guess, rowNumber, setGuess, setSaveOne,
+    setSaveTwo, setSaveThree, setSaveFour, setSaveFive, setSaveSix, setSolved, setRowNumber }: KeyProps) => {
 
     const handleClick = () => {
         let val: string = "";

@@ -25,14 +25,15 @@ interface KeyboardProps {
     word: string;
 }
 
-const Keyboard = ({ word, rowNumber, setGuess, setSaveOne, setSaveTwo, setSaveThree, setSaveFour, setSaveFive, setSaveSix, setRowNumber, setSolved, guess }: KeyboardProps) => {
+const Keyboard = ({ word, rowNumber, setGuess, setSaveOne, setSaveTwo, setSaveThree, setSaveFour,
+    setSaveFive, setSaveSix, setRowNumber, setSolved, guess }: KeyboardProps) => {
+
     const [firstKeys, setFirstKeys] = useState<Key[]>([]);
     const [secondKeys, setSecondKeys] = useState<Key[]>([]);
     const [thirdKeys, setThirdKeys] = useState<Key[]>([]);
 
-    let alph: string = "QWERTYUIOPASDFGHJKLZXCVBNM";
-
     useEffect(() => {
+        let alph: string = "QWERTYUIOPASDFGHJKLZXCVBNM";
         let key_list: Key[] = [];
         for (let i = 0; i < 10; i++) {
             key_list.push({ value: alph[i] });
