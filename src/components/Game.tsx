@@ -79,10 +79,10 @@ const Game = () => {
     });
 
     return (
-        <div style={{marginBottom:"40px"}}>
-            <Typography variant="h4"><b>Alec's Wordle</b></Typography>
+        <div>
+            <Typography variant="h4"><b>Ashbury Wordle</b></Typography>
             <hr />
-            <div style={{ marginTop: "5rem" }}>
+            <div style={{ marginTop: "3rem"}}>
                 <div>
                     {(rowNumber > 0) ?
                         <CompleteRow
@@ -161,7 +161,9 @@ const Game = () => {
                         }
                     </div>
                 </div>
-                <Keyboard setGuess={setGuess} guess={guess}/>
+                <div style={{marginTop: "4rem"}}>
+                    <Keyboard setGuess={setGuess} guess={guess}/>
+                </div>
                 {(solved && showComplete) ?
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "-15rem", marginLeft: "36rem", position: "absolute" }}>
                         <Solved setShowComplete={setShowComplete} />
