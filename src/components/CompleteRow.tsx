@@ -45,7 +45,6 @@ const CompleteRow = ({ entered, word }: CompleteRowProps) => {
             </div>
         </div>
     )
-
 }
 
 export default CompleteRow;

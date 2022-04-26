@@ -1,8 +1,6 @@
 import {
     Dispatch,
     SetStateAction,
-    useEffect,
-    useState,
 } from "react";
 import styles from "../styles/Key.module.css";
 
@@ -17,7 +15,7 @@ const Key = ({ value, guess, setGuess }: KeyProps) => {
     const handleClick = () => {
         let val: string = "";
         if (value === "Delete") {
-            for (let i = 0; i < guess.length -1; i++){
+            for (let i = 0; i < guess.length - 1; i++) {
                 val += guess[i];
             }
             setGuess(val);

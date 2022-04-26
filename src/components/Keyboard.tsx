@@ -49,7 +49,7 @@ const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {firstKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value} setGuess={setGuess} guess={guess}/>
+                        <Key value={key.value} setGuess={setGuess} guess={guess} />
                     </div>
 
                 ))}
@@ -57,7 +57,7 @@ const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {secondKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value} setGuess={setGuess} guess={guess}/>
+                        <Key value={key.value} setGuess={setGuess} guess={guess} />
                     </div>
 
                 ))}
@@ -65,7 +65,7 @@ const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {thirdKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value} setGuess={setGuess} guess={guess}/>
+                        <Key value={key.value} setGuess={setGuess} guess={guess} />
                     </div>
 
                 ))}

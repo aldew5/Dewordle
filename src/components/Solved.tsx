@@ -2,11 +2,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import ClearIcon from "@mui/icons-material/Clear";
 import Typography from "@mui/material/Typography";
-import {
-    Dispatch,
-    SetStateAction
-}
-    from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface SolvedProps {
     setShowComplete: Dispatch<SetStateAction<boolean>>;
@@ -36,7 +32,6 @@ const Solved = ({ setShowComplete }: SolvedProps) => {
                     <Typography sx={{ marginTop: "1rem" }}>
                         You have successfully beaten today's Wordle!
                     </Typography>
-
                 </CardContent>
             </div>
         </Card >

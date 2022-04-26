@@ -11,13 +11,11 @@ interface CompelteCellProps {
     word: string;
 }
 
-
 const CompleteCell = ({ value, required, word }: CompelteCellProps) => {
 
     const [color, setColor] = useState<string>("grey");
 
     useEffect(() => {
-
         if (value === required) {
             setColor("green");
         } else {

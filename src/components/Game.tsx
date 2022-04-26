@@ -67,7 +67,7 @@ const Game = () => {
     }
 
     useEffect(() => {
-        setWord(words[Math.floor(Math.random()*words.length)])
+        setWord(words[Math.floor(Math.random() * words.length)])
     }, [])
 
     // add the event listener (for key presses)
@@ -82,7 +82,7 @@ const Game = () => {
         <div>
             <Typography variant="h4"><b>Ashbury Wordle</b></Typography>
             <hr />
-            <div style={{ marginTop: "3rem"}}>
+            <div style={{ marginTop: "3rem" }}>
                 <div>
                     {(rowNumber > 0) ?
                         <CompleteRow
@@ -161,11 +161,14 @@ const Game = () => {
                         }
                     </div>
                 </div>
-                <div style={{marginTop: "4rem"}}>
-                    <Keyboard setGuess={setGuess} guess={guess}/>
+                <div style={{ marginTop: "4rem" }}>
+                    <Keyboard setGuess={setGuess} guess={guess} />
                 </div>
                 {(solved && showComplete) ?
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "-15rem", marginLeft: "36rem", position: "absolute" }}>
+                    <div style={{
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        marginTop: "-28rem", marginLeft: "36rem", position: "absolute"
+                    }}>
                         <Solved setShowComplete={setShowComplete} />
                     </div>
                     :
