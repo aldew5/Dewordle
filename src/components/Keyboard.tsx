@@ -1,12 +1,21 @@
 import Key from "./Key";
-import { useEffect, useState } from "react";
+import {
+    Dispatch,
+    SetStateAction,
+    useEffect,
+    useState,
+} from "react";
 
 interface Key {
     value: string;
 }
 
+interface KeyboardProps {
+    setGuess: Dispatch<SetStateAction<string>>;
+    guess: string;
+}
 
-const KeyBoard = () => {
+const Keyboard = ({ setGuess, guess }: KeyboardProps) => {
     const [firstKeys, setFirstKeys] = useState<Key[]>([]);
     const [secondKeys, setSecondKeys] = useState<Key[]>([]);
     const [thirdKeys, setThirdKeys] = useState<Key[]>([]);
@@ -15,24 +24,24 @@ const KeyBoard = () => {
 
     useEffect(() => {
         let key_list: Key[] = [];
-        for (let i = 0; i < 10; i++){
+        for (let i = 0; i < 10; i++) {
             key_list.push({ value: alph[i] });
         }
         setFirstKeys(key_list);
 
         key_list = [];
-        for (let i = 10; i < 19; i++){
+        for (let i = 10; i < 19; i++) {
             key_list.push({ value: alph[i] })
         }
         setSecondKeys(key_list);
 
-        key_list = [{ value:"Enter" }];
+        key_list = [{ value: "Enter" }];
         for (let i = 19; i < 26; i++) {
             key_list.push({ value: alph[i] })
         }
         key_list.push({ value: "Delete" });
         setThirdKeys(key_list);
-       
+
     }, [])
 
     return (
@@ -40,29 +49,29 @@ const KeyBoard = () => {
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {firstKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value}/>
+                        <Key value={key.value} setGuess={setGuess} guess={guess}/>
                     </div>
-                
+
                 ))}
             </div>
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {secondKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value}/>
+                        <Key value={key.value} setGuess={setGuess} guess={guess}/>
                     </div>
-                
+
                 ))}
             </div>
             <div style={{ margin: "auto", width: "300px", display: "table" }}>
                 {thirdKeys.map((key) => (
                     <div style={{ width: "50px", display: "table-cell" }}>
-                        <Key value={key.value}/>
+                        <Key value={key.value} setGuess={setGuess} guess={guess}/>
                     </div>
-                
+
                 ))}
             </div>
         </div>
     )
 }
 
-export default KeyBoard;
+export default Keyboard;

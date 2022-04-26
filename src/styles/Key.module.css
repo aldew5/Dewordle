@@ -21,3 +21,11 @@
     margin-left: 5px;
     margin-top: 5px;
 }
+
+.key:hover {
+    background-color: grey;
+}
+
+.command:hover {
+    background-color: grey;
+}

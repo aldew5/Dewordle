@@ -2,6 +2,7 @@ import Row from "./Row";
 import CompleteRow from "./CompleteRow";
 import Typography from "@mui/material/Typography";
 import Solved from "./Solved";
+import Keyboard from "./Keyboard";
 import { useState, useEffect } from "react";
 
 const Game = () => {
@@ -160,6 +161,7 @@ const Game = () => {
                         }
                     </div>
                 </div>
+                <Keyboard setGuess={setGuess} guess={guess}/>
                 {(solved && showComplete) ?
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "-15rem", marginLeft: "36rem", position: "absolute" }}>
                         <Solved setShowComplete={setShowComplete} />
