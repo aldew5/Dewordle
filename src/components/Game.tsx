@@ -80,7 +80,7 @@ const Game = () => {
 
     return (
         <div>
-            <Typography variant="h4"><b>Ashbury Wordle</b></Typography>
+            <Typography variant="h4"><b> Dewordle</b></Typography>
             <hr />
             <div style={{ marginTop: "3rem" }}>
                 <div>
